@@ -357,7 +357,7 @@ install-ctf: plist
 	${RUN}${CAT} ${_PLIST_NOKEYWORDS} \
 	| ${SED} -e 's|^|${DESTDIR}${PREFIX}/|' \
 	| while read f; do \
-		if [ -x $${f} ]; then \
+		if [ -x $${f} -a ! -h $${f} ]; then \
 			/usr/bin/file -b $${f} | ${GREP} ELF >/dev/null || continue; \
 			/shared/tmp/onbld/bin/i386/ctfconvert-altexec $${f}; \
 			if [ ! -w $${f} ]; then \
