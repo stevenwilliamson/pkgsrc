@@ -351,14 +351,11 @@ install-strip-debug: plist
 		fi \
 	done
 
-_CTF_EXE_PATHS=	(bin/|sbin/|libexec/|\.(dylib|sl|so)$$|lib/lib.*\.(dylib|sl|so))
-
 .PHONY: install-ctf
 install-ctf: plist
 	@${STEP_MSG} "Generating CTF data"
 	${RUN}${CAT} ${_PLIST_NOKEYWORDS} \
 	| ${SED} -e 's|^|${DESTDIR}${PREFIX}/|' \
-	| ${EGREP} -h ${_CTF_EXE_PATHS:Q} \
 	| while read f; do \
 		if [ -x $${f} ]; then \
 			/usr/bin/file -b $${f} | ${GREP} ELF >/dev/null || continue; \
