@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.76 2017/08/16 19:59:50 wiz Exp $
 
-DISTNAME=	binutils-2.26.1
+DISTNAME=	binutils-2.29.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
 
