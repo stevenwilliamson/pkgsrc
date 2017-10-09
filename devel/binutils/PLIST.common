@@ -204,3 +204,10 @@ share/locale/zh_CN/LC_MESSAGES/opcodes.mo
 ${PLIST.gprof}share/locale/vi/LC_MESSAGES/gprof.mo
 share/locale/zh_TW/LC_MESSAGES/binutils.mo
 share/locale/zh_TW/LC_MESSAGES/ld.mo
+lib/locale/de/LC_MESSAGES/ld.mo
+lib/locale/hr/LC_MESSAGES/bfd.mo
+lib/locale/ru/LC_MESSAGES/ld.mo
+lib/locale/sr/LC_MESSAGES/bfd.mo
+lib/locale/sr/LC_MESSAGES/ld.mo
+lib/locale/sr/LC_MESSAGES/opcodes.mo
+lib/locale/sv/LC_MESSAGES/gas.mo
