@@ -232,4 +232,5 @@ share/doc/tiff/html/v4.0.4.html
 share/doc/tiff/html/v4.0.4beta.html
 share/doc/tiff/html/v4.0.5.html
 share/doc/tiff/html/v4.0.6.html
+share/doc/tiff/html/v4.0.7.html
 share/doc/tiff/html/v${PKGVERSION}.html
