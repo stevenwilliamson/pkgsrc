@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- startup/default-init.in.orig	2018-08-16 19:10:12.000000000 +0000
++++ startup/default-init.in
+@@ -61,7 +61,7 @@ fi
+ USE_RAMDISK=${USE_RAMDISK:-0}
+ if test "$USE_RAMDISK" -ne 0 && test "$RAMDISK_SIZE"X != "X"; then
+ 	ramdisk=`mount |grep "${RAMDISK_DIR} type tmpfs"`
+-	if [ "$ramdisk"X == "X" ]; then
++	if [ "$ramdisk"X = "X" ]; then
+ 		if [ ! -d ${RAMDISK_DIR} ]; then
+ 			mkdir -p -m 0755 ${RAMDISK_DIR}
+ 			if [ -d ${RAMDISK_DIR} ]; then

@@ -2,10 +2,10 @@ $NetBSD: patch-base_checks.c,v 1.2 2016/02/09 10:12:53 bouyer Exp $
 
 64bit time_t workaround
 
---- base/checks.c.orig	2016-02-07 21:52:43.000000000 +0100
-+++ base/checks.c	2016-02-07 21:54:09.000000000 +0100
-@@ -1320,12 +1320,12 @@
- 		if(expected_time < current_time) {
+--- base/checks.c.orig	2018-08-16 19:10:12.000000000 +0000
++++ base/checks.c
+@@ -1969,12 +1969,12 @@ void check_for_orphaned_services(void)
+ 		if (expected_time < current_time) {
  
  			/* log a warning */
 -			logit(NSLOG_RUNTIME_WARNING, TRUE, "Warning: The check of service '%s' on host '%s' looks like it was orphaned (results never came back; last_check=%lu; next_check=%lu).  I'm scheduling an immediate check of the service...\n", temp_service->description, temp_service->host_name, temp_service->last_check, temp_service->next_check);
@@ -19,4 +19,11 @@ $NetBSD: patch-base_checks.c,v 1.2 2016/02/09 10:12:53 bouyer Exp $
 +						   (unsigned long)temp_service->last_check, ctime(&temp_service->last_check));
  
  			/* decrement the number of running service checks */
- 			if(currently_running_service_checks > 0)
+ 			if (currently_running_service_checks > 0) {
+@@ -3497,4 +3497,4 @@ int parse_check_output(char *buf, char *
+ 	dbuf_free(&perf_text);
+ 
+ 	return OK;
+-}
+\ No newline at end of file
++}
